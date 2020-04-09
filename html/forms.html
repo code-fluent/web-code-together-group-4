@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Forms</title>
+    <style>
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      input {
+        font-size: 18px;
+      }
+
+      textarea {
+        width: 50%;
+        font-size: 18px;
+      }
+
+      fieldset {
+        border: none;
+        margin-top: 15px;
+        background-color: #f6f6f6;
+      }
+
+      legend {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="firstName">First name</label>
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        placeholder="First name"
+      />
+
+      <label for="lastName">Last name</label>
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        placeholder="Last name"
+      />
+
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Email" />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+
+      <label for="favoriteColor">Favorite color</label>
+      <input type="color" name="color" id="color" value="#ff0000" />
+
+      <label for="avatar">Upload your avatar image</label>
+      <input type="file" name="avatar" id="avatar" />
+
+      <label for="kids">How many kids you have?</label>
+      <input type="number" name="kids" id="kids" min="0" max="20" />
+
+      <label for="income">What is your monthly income?</label>
+      <input type="range" name="income" id="income" min="0" max="10000" />
+      <span id="wage"></span>
+
+      <label for="country">Country</label>
+      <select>
+        <option value="">Choose your country</option>
+        <option value="ro">Romania</option>
+        <option value="uk">United Kingdom</option>
+        <option value="usa">United States</option>
+      </select>
+
+      <fieldset>
+        <legend>Select your gender</legend>
+
+        <label>
+          <input type="radio" name="gender" value="female" /> Female
+        </label>
+
+        <label> <input type="radio" name="gender" value="male" /> Male </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>How you want to be contacted?</legend>
+
+        <label>
+          <input type="checkbox" name="contact" value="phone" /> Phone
+        </label>
+
+        <label>
+          <input type="checkbox" name="contact" value="email" /> Email
+        </label>
+      </fieldset>
+
+      <label for="bio">Tell us about yourself</label>
+      <textarea rows="10">Short bio..</textarea>
+    </form>
+
+    <script>
+      var incomeElement = document.getElementById("income");
+      var wageElement = document.getElementById("wage");
+
+      incomeElement.addEventListener("change", function () {
+        wageElement.innerHTML = incomeElement.value;
+      });
+    </script>
+  </body>
+</html>

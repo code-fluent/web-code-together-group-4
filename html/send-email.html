@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Send email</title>
+  </head>
+  <body>
+    <form
+      action="https://18z9lalk4f.execute-api.us-east-1.amazonaws.com/dev/email/send"
+      method="POST"
+    >
+      <label for="fromName">Your name</label>
+      <input type="text" name="fromName" id="fromName" />
+
+      <label for="toEmail">To email</label>
+      <input type="email" name="toEmail" id="toEmail" />
+
+      <label for="subject">Subject</label>
+      <input type="text" name="subject" id="subject" />
+
+      <label for="message">Message</label>
+      <textarea name="message" id="message"></textarea>
+
+      <button>Send email</button>
+    </form>
+  </body>
+</html>
