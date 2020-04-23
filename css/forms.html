@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Forms</title>
+    <style>
+      .form {
+        width: 500px;
+        margin: 70px auto 70px auto;
+      }
+
+      .label {
+        display: block;
+        font-size: 13px;
+      }
+
+      .input {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 6px;
+        resize: vertical;
+        border: 1px solid #aaaaaa;
+        outline: none;
+        border-radius: 4px;
+        font-size: 15px;
+      }
+
+      .input:focus {
+        border-color: #3185fb;
+      }
+
+      .button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        padding: 6px 0;
+        border: none;
+        border-radius: 4px;
+        background-color: hsl(310, 80%, 40%);
+        font-size: 15px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="form">
+      <label for="firstName" class="label">First Name</label>
+      <input type="text" name="firstName" id="firstName" class="input" />
+
+      <label for="lastName" class="label">Last Name</label>
+      <input type="text" name="lastName" id="lastName" class="input" />
+
+      <label for="email" class="label">Email</label>
+      <input type="email" name="email" id="email" class="input" />
+
+      <label for="comment" class="label">Comment</label>
+      <textarea name="comment" id="comment" class="input"> </textarea>
+
+      <button class="button">Comment</button>
+    </form>
+  </body>
+</html>
