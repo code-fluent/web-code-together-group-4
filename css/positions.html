@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Positions</title>
+    <style>
+      .box {
+        position: static;
+        height: 250px;
+        background: rgb(165, 66, 165);
+        margin: 20px;
+      }
+
+      .relative {
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+
+      .absolute {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: royalblue;
+        margin: 0;
+      }
+
+      .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: royalblue;
+        margin: 0;
+      }
+
+      .sticky {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box sticky">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+  </body>
+</html>
