@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Transitions</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 30px;
+        background-color: royalblue;
+        transform: none;
+        opacity: 1;
+        transition: transform 2s linear, background-color 1s linear,
+          opacity 2s linear;
+      }
+
+      .translate:hover {
+        transform: translate(20px, 20px);
+      }
+
+      .scale:hover {
+        transform: scale(1.5, 1.5);
+      }
+
+      .rotate:hover {
+        transform: rotate(45deg);
+      }
+
+      .color:hover {
+        background-color: salmon;
+      }
+
+      .opacity:hover {
+        opacity: 0.2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box translate"></div>
+    <div class="box scale"></div>
+    <div class="box rotate"></div>
+    <div class="box color"></div>
+    <div class="box opacity"></div>
+  </body>
+</html>
