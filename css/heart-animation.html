@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Heart animation</title>
+    <style>
+      .heart {
+        display: block;
+        width: 200px;
+        margin: 400px auto;
+        animation: heartbeat 0.5s ease-out infinite;
+      }
+
+      @keyframes heartbeat {
+        from {
+          transform: scale(0.7);
+        }
+
+        to {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      class="heart"
+      src="https://www.pinclipart.com/picdir/middle/30-306730_file-wikifont-unie033-heart-red-svg-wikimedia-commons.png"
+    />
+  </body>
+</html>
