@@ -2,7 +2,7 @@
   <head>
     <title>Todo App</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -32,12 +32,104 @@
         margin: 0 0 35px 0;
         font-size: 22px;
       }
+
+      .input {
+        width: 100%;
+        margin-bottom: 27px;
+        padding-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid #d7dadf;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .input:focus {
+        border-bottom-color: blue;
+      }
+
+      .todo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .filters {
+        margin-top: 50px;
+      }
+
+      .filter-text {
+        margin-right: 17px;
+        opacity: 0.6;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .filter {
+        border: none;
+        background: none;
+        outline: none;
+        margin-right: 10px;
+        padding: 0;
+        text-decoration: underline;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        color: blue;
+      }
+
+      .selected {
+        text-decoration: none;
+        color: #000;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"]:checked + .checkbox {
+        background-color: blue;
+      }
+
+      .checkbox {
+        width: 18px;
+        height: 18px;
+        margin-right: 14px;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+      }
     </style>
   </head>
   <body>
     <form class="container">
       <img class="logo" src="logo@2x.png" />
       <h1 class="title">Grocery list</h1>
+      <input class="input" type="text" placeholder="Add a new todo" />
+
+      <label class="todo">
+        <input type="checkbox" /> <span class="checkbox"></span>Buy chocolate
+      </label>
+      <label class="todo">
+        <input type="checkbox" /> <span class="checkbox"></span>Buy bread
+      </label>
+      <label class="todo">
+        <input type="checkbox" /> <span class="checkbox"></span>Buy apple
+      </label>
+      <label class="todo">
+        <input type="checkbox" /> <span class="checkbox"></span>Buy coke
+      </label>
+      <label class="todo">
+        <input type="checkbox" /> <span class="checkbox"></span>Buy fruits
+      </label>
+      <label class="todo">
+        <input type="checkbox" /> <span class="checkbox"></span>Buy meat
+      </label>
+
+      <div class="filters">
+        <span class="filter-text">Show:</span>
+        <button class="filter selected">All</button>
+        <button class="filter">Completed</button>
+        <button class="filter">Incompleted</button>
+      </div>
     </form>
   </body>
 </html>
