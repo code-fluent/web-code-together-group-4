@@ -49,6 +49,7 @@
       }
 
       .todo {
+        position: relative;
         display: flex;
         align-items: center;
         margin-bottom: 16px;
@@ -88,14 +89,36 @@
 
       input[type="checkbox"]:checked + .checkbox {
         background-color: blue;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAASCAYAAABB7B6eAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAGKADAAQAAAABAAAAEgAAAACohW0MAAAAuUlEQVQ4Ee2VSwrDMAxEc7TcINmldw+ki16j4D6FTAlFVu1GywoG49+bWBJkGJKjlDKjDa1oTMUDvKEnUqxpBhA/4WaypRhU4PaS6bIBkAWd08J0ny9/eFtayNeIrGetd78WhTNet5iZn3M2DK6oH6RiHOovKJfuoh+ja8JeP9zaiIsTCvP5M1x9GgGiPd1vGgNQ+LomuA5VTFh+h1sf3W8aQXnFNIfrcH2BY5IHP5nYj+NxaNZ67/gCy1dIE/MiuVMAAAAASUVORK5CYII=");
+        background-size: 12px 9px;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       .checkbox {
+        background-color: #fff;
+        transition: background-color 0.4s linear;
         width: 18px;
         height: 18px;
         margin-right: 14px;
         border-radius: 4px;
         border: 1px solid rgba(0, 0, 0, 0.25);
+      }
+
+      .remove {
+        display: none;
+        position: absolute;
+        right: 0;
+        border: none;
+        background: none;
+        outline: none;
+        padding: 0;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .todo:hover .remove {
+        display: inline-block;
       }
     </style>
   </head>
@@ -107,28 +130,34 @@
 
       <label class="todo">
         <input type="checkbox" /> <span class="checkbox"></span>Buy chocolate
+        <button type="button" class="remove">×</button>
       </label>
       <label class="todo">
         <input type="checkbox" /> <span class="checkbox"></span>Buy bread
+        <button type="button" class="remove">×</button>
       </label>
       <label class="todo">
         <input type="checkbox" /> <span class="checkbox"></span>Buy apple
+        <button type="button" class="remove">×</button>
       </label>
       <label class="todo">
         <input type="checkbox" /> <span class="checkbox"></span>Buy coke
+        <button type="button" class="remove">×</button>
       </label>
       <label class="todo">
         <input type="checkbox" /> <span class="checkbox"></span>Buy fruits
+        <button type="button" class="remove">×</button>
       </label>
       <label class="todo">
         <input type="checkbox" /> <span class="checkbox"></span>Buy meat
+        <button type="button" class="remove">×</button>
       </label>
 
       <div class="filters">
         <span class="filter-text">Show:</span>
-        <button class="filter selected">All</button>
-        <button class="filter">Completed</button>
-        <button class="filter">Incompleted</button>
+        <button type="button" class="filter selected">All</button>
+        <button type="button" class="filter">Completed</button>
+        <button type="button" class="filter">Incompleted</button>
       </div>
     </form>
   </body>
