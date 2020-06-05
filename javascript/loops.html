@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Loops</title>
+    <script>
+      // Generate a number between 1 and 6
+      function dice() {
+        var number = Math.ceil(Math.random() * 6);
+        return number;
+      }
+
+      do {
+        var number = dice();
+        console.log("number=", number);
+      } while (number !== 6);
+    </script>
+  </head>
+</html>

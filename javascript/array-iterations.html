@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Array iterations</title>
+    <script>
+      var numbers = [8, 2, 6, 4, 3, 1, 7];
+
+      // List all numbers from array
+      for (var i = 0; i <= numbers.length - 1; i++) {
+        console.log(numbers[i]);
+      }
+
+      // Calculate sum of numbers from array
+      var sum = 0;
+      for (var j = 0; j <= numbers.length - 1; j++) {
+        sum = sum + numbers[j];
+        // console.log("sum=", sum);
+      }
+
+      console.log("sum=", sum);
+
+      // Find the minimum number from array
+      var min = numbers[0];
+      for (var k = 1; k <= numbers.length - 1; k++) {
+        if (numbers[k] < min) {
+          min = numbers[k];
+        }
+      }
+
+      console.log("min=", min);
+
+      // Group even/odd numbers
+      var evenNumbers = [];
+      var oddNumbers = [];
+
+      for (var l = 0; l <= numbers.length - 1; l++) {
+        if (numbers[l] % 2 === 0) {
+          evenNumbers.push(numbers[l]);
+        } else {
+          oddNumbers.push(numbers[l]);
+        }
+      }
+
+      console.log("even numbers", evenNumbers);
+      console.log("odd numbers", oddNumbers);
+
+      // Prime number
+      function isPrime(number) {
+        for (var i = 2; i < number; i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      console.log("is 4 prime?", isPrime(4));
+      console.log("is 17 prime?", isPrime(17));
+    </script>
+  </head>
+</html>
