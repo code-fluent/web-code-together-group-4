@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Coodinates</title>
+  </head>
+  <body>
+    <h1 id="latitude"></h1>
+    <h1 id="longitude"></h1>
+    <h1 id="speed"></h1>
+
+    <script>
+      var latitudeElement = document.getElementById("latitude");
+      var longitudeElement = document.getElementById("longitude");
+      var speedElement = document.getElementById("speed");
+
+      // console.log(navigator.geolocation);
+      function onSuccess(coordinates) {
+        latitudeElement.innerHTML = coordinates.coords.latitude;
+        longitudeElement.innerHTML = coordinates.coords.longitude;
+        speedElement.innerHTML = coordinates.coords.speed;
+      }
+
+      function onError(error) {
+        console.error(error);
+      }
+
+      navigator.geolocation.watchPosition(onSuccess, onError);
+    </script>
+  </body>
+</html>
