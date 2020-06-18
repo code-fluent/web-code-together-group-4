@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Objects</title>
+    <script>
+      var car = {
+        type: "Audi",
+        model: "R8",
+        wheels: 4,
+        consumption: 8 / 100,
+        fuel: 10,
+        distance: 0,
+        engineStarted: false,
+        startEngine: function () {
+          this.engineStarted = true;
+          console.log("Engine started");
+        },
+        stopEngine: function () {
+          this.engineStarted = false;
+          console.log("Engine stopped");
+        },
+        travel: function (distance) {
+          this.distance = this.distance + distance;
+          this.fuel = this.fuel - distance * this.consumption;
+          console.log("Travel", this.distance, this.fuel);
+        },
+        refuel: function (fuel) {
+          this.fuel = this.fuel + fuel;
+          console.log("Refuel", this.fuel);
+        },
+      };
+
+      car.startEngine();
+      car.travel(5);
+      car.refuel(30);
+      car.travel(100);
+      car.travel(50);
+      car.travel(100);
+      car.stopEngine();
+    </script>
+  </head>
+</html>

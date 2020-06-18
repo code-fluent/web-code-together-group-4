@@ -1,0 +1,52 @@
+<!-- 
+    Shopping list
+
+    Methods and properties:
+    - items[]
+    - addItem()
+    - removeItem()
+    - total()    
+
+    Item:
+    - name
+    - price
+    - weight
+    - quantity
+ -->
+
+<html>
+  <head>
+    <title>Shopping list</title>
+    <script>
+      var sausage = { name: "Sausage", price: 10, weight: 1, quantity: 1 };
+      var bread = { name: "Bread", price: 3, weight: 0.5, quantity: 2 };
+      var cheese = { name: "Cheese", price: 5, weight: 0.5, quantity: 1 };
+      var beer = { name: "Beer", price: 2, weight: 0.5, quantity: 10 };
+      var water = { name: "Water", price: 1, weight: 1, quantity: 2 };
+
+      var shoppingList = {
+        items: [],
+
+        addItem: function (item) {
+          this.items.push(item);
+        },
+
+        removeItem: function (item) {
+          var index = this.items.indexOf(item);
+          this.items.splice(index, 1);
+        },
+      };
+
+      console.log(JSON.stringify(shoppingList.items));
+
+      shoppingList.addItem(sausage);
+      console.log(JSON.stringify(shoppingList.items));
+
+      shoppingList.addItem(cheese);
+      console.log(JSON.stringify(shoppingList.items));
+
+      shoppingList.removeItem(sausage);
+      console.log(JSON.stringify(shoppingList.items));
+    </script>
+  </head>
+</html>

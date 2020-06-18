@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Array methods</title>
+    <script>
+      var numbers = [1, 2, 3, 4, 5];
+
+      // Listing items from array with for
+      for (var i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+      }
+
+      // Listing items from array with forEach
+      numbers.forEach(function (number) {
+        console.log(number);
+      });
+
+      // Adding items to an array
+      numbers.push(6, 7); // adds to the end
+      numbers.unshift(0); // adds to the beginning
+      console.log(numbers);
+
+      // Update an item from an array
+      numbers[7] = "seven";
+      console.log(numbers);
+
+      // Delete an item from an array
+      numbers.splice(2, 1);
+      console.log(numbers);
+
+      // Insert an item in the middle of an array
+      numbers.splice(2, 0, 2);
+      console.log(numbers);
+
+      // Filter items from array
+      var oddNumbers = numbers.filter(function (number) {
+        if (number % 2 !== 0) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      console.log(oddNumbers);
+
+      // Mapping items from an array
+      var doubledNumbers = numbers.map(function (number) {
+        return number * 2;
+      });
+
+      console.log(doubledNumbers);
+
+      // Sorting arrays
+      var randomNumbers = [1, 2, 9, 7, 11, 8, 5];
+      randomNumbers.sort(function (a, b) {
+        if (a < b) return -1;
+        if (a > b) return 1;
+        if (a === b) return 0;
+      });
+
+      console.log(randomNumbers);
+
+      // Filtering names
+      var names = ["Johnathan", "Nick", "Joshua", "Anna", "Samantha"];
+      var longNames = names.filter(function (name) {
+        if (name.length > 5) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      console.log(longNames);
+    </script>
+  </head>
+</html>
