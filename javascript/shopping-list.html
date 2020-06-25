@@ -35,6 +35,12 @@
           var index = this.items.indexOf(item);
           this.items.splice(index, 1);
         },
+
+        total: function () {
+          return this.items.reduce(function (sum, item) {
+            return sum + item.price * item.quantity;
+          }, 0);
+        },
       };
 
       console.log(JSON.stringify(shoppingList.items));
@@ -45,8 +51,10 @@
       shoppingList.addItem(cheese);
       console.log(JSON.stringify(shoppingList.items));
 
-      shoppingList.removeItem(sausage);
-      console.log(JSON.stringify(shoppingList.items));
+      // shoppingList.removeItem(sausage);
+      // console.log(JSON.stringify(shoppingList.items));
+
+      console.log(shoppingList.total())
     </script>
   </head>
 </html>
