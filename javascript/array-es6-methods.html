@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Array ES6 methods</title>
+    <script>
+      const array = [9, -10, 5, 2, -3, 7];
+
+      const negativeNumbers = array.filter(function (number) {
+        if (number >= 0) {
+          return false;
+        } else {
+          return true;
+        }
+      });
+
+      const largerNumbers = array.map(function (number) {
+        return number + 1;
+      });
+
+      const firstNegativeNumber = array.find(function (number) {
+        return number < 0;
+      });
+
+      const sum = array.reduce(function (accumulator, number) {
+        return accumulator + number;
+      }, 0);
+
+      const doubledNumbers = array.reduce(function (accumulator, number) {
+        accumulator.push(number * 2);
+        return accumulator;
+      }, []);
+
+      const numbersA = [1, 2, 3, 4, 5];
+      const numbersB = [6, 7, 8, 9, 10];
+      //   const allNumbers = numbersA.concat(numbersB);
+      const allNumbers = [...numbersA, ...numbersB];
+    </script>
+  </head>
+</html>

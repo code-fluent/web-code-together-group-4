@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>var vs. let vs. const</title>
+    <script>
+      function varTest() {
+        var a = 1;
+
+        if (1 === 1) {
+          var a = 2;
+          console.log(a);
+        }
+
+        console.log(a);
+      }
+
+      function letTest() {
+        let a = 1;
+
+        if (1 === 1) {
+          let a = 2;
+          console.log(a);
+        }
+
+        console.log(a);
+      }
+
+      letTest();
+    </script>
+  </head>
+</html>

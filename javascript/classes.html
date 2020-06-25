@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Classes</title>
+    <script>
+      class Car {
+        constructor(type, model, consumption) {
+          this.type = type;
+          this.model = model;
+          this.consumption = consumption;
+          this.wheels = 4;
+          this.fuel = 10;
+          this.distance = 0;
+          this.engineStarted = false;
+        }
+
+        startEngine() {
+          this.engineStarted = true;
+          console.log("Engine started.");
+        }
+
+        stopEngine() {
+          this.engineStarted = false;
+          console.log("Engine stopped.");
+        }
+
+        travel(distance) {
+          this.distance = this.distance + distance;
+          this.fuel = this.fuel - distance * this.consumption;
+          console.log("Travel", this.distance, this.fuel);
+        }
+
+        refuel(fuel) {
+          this.fuel = this.fuel + fuel;
+          console.log("Refuel", this.fuel);
+        }
+      }
+
+      class Truck extends Car {
+        constructor(type, model, consumption, wheels) {
+          super(type, model, consumption);
+          this.wheels = wheels;
+          this.weight = 0;
+        }
+
+        load(weight) {
+          this.weight = this.weight + weight;
+          console.log("Load", this.weight);
+        }
+      }
+
+      const audi = new Car("Audi", "R8", 0.08);
+      const bmw = new Car("BWM", "X5", 0.09);
+      const volvo = new Truck("Volvo", "V", 0.5, 12);
+
+      audi.startEngine();
+      bwm.startEngine();
+      volvo.startEngine();
+      volvo.load(1000);
+
+      console.log(audi);
+      console.log(bmw);
+    </script>
+  </head>
+</html>

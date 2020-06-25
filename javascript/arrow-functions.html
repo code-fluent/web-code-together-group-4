@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Arrow functions</title>
+    <script>
+      //   function sum(a, b, c) {
+      //     return a + b + c;
+      //   }
+
+      //   const sum = (a, b, c) => {
+      //     return a + b + c;
+      //   };
+
+      const sum = (a, b, c) => a + b + c;
+      console.log(sum(1, 4, 5));
+
+      const numbers = [1, 3, 5, 8, 10, 20, 23];
+
+      //   const multipliesOfFive = numbers.filter(function (number) {
+      //     if (number % 5 === 0) {
+      //       return true;
+      //     } else {
+      //       return false;
+      //     }
+      //   });
+
+      const multipliesOfFive = numbers.filter((number) => number % 5 === 0);
+      console.log(multipliesOfFive);
+    </script>
+  </head>
+</html>
