@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Car driving</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      .carImage {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      id="car"
+      class="carImage"
+      src="https://img.favpng.com/8/7/19/car-computer-icons-vector-graphics-portable-network-graphics-icon-design-png-favpng-bcSDHS9C8MjPWUZVKDDR3R0PH.jpg"
+      alt="Car"
+    />
+
+    <script>
+      const carElement = document.getElementById("car");
+      let x = 0;
+      let y = 0;
+
+      document.addEventListener("keypress", (event) => {
+        console.log(event);
+      });
+    </script>
+  </body>
+</html>
