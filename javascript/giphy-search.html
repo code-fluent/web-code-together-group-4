@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Giphy search</title>
+    <style>
+      .search {
+        width: 100%;
+        padding: 10px 15px;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      name="search"
+      type="text"
+      id="search"
+      class="search"
+      placeholder="Search"
+    />
+
+    <div id="container"></div>
+
+    <script>
+      const searchElement = document.getElementById("search");
+      const containerElement = document.getElementById("container");
+
+      searchElement.addEventListener("keypress", (event) => {
+        if (event.code === "Enter") {
+          const searchText = searchElement.value;
+          const promise = fetch(
+            "https://18z9lalk4f.execute-api.us-east-1.amazonaws.com/dev/giphy/search?search=" +
+              searchText
+          );
+
+          promise
+            .then((response) => {
+              return response.json();
+            })
+            .then((images) => {
+              //   console.log(images);
+              container.innerHTML = "";
+              images.forEach((imageUrl) => {
+                const imageElement = document.createElement("IMG");
+                imageElement.setAttribute("src", imageUrl);
+                containerElement.appendChild(imageElement);
+              });
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
