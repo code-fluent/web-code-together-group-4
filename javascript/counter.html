@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Counter</title>
+    <style>
+      body {
+        display: flex;
+        height: 40px;
+        align-items: center;
+      }
+
+      .number {
+        margin: 0 10px;
+      }
+
+      .button {
+        border: none;
+        background-color: royalblue;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="minus" class="button">-</button>
+    <h1 id="number" class="number">0</h1>
+    <button id="plus" class="button">+</button>
+    <script>
+      const minusElement = document.getElementById("minus");
+      const plusElement = document.getElementById("plus");
+      const numberElement = document.getElementById("number");
+      let counter = 0;
+
+      minusElement.addEventListener("click", (event) => {
+        counter = counter - 1;
+        numberElement.innerHTML = counter;
+      });
+
+      plusElement.addEventListener("click", (event) => {
+        counter = counter + 1;
+        numberElement.innerHTML = counter;
+      });
+    </script>
+  </body>
+</html>

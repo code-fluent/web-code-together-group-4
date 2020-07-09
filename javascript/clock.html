@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Clock</title>
+  </head>
+  <body>
+    <h1 id="clock"></h1>
+    <script>
+      setInterval(() => {
+        const clockElement = document.getElementById("clock");
+        const date = new Date();
+        const time = date.toLocaleTimeString();
+        clockElement.innerHTML = time;
+      }, 1000);
+    </script>
+  </body>
+</html>
