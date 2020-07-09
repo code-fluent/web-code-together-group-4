@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Color picker HSL</title>
+    <style>
+      .slider {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body id="body">
+    <input class="slider" type="range" id="hue" min="0" max="360" value="0" />
+    <input
+      class="slider"
+      type="range"
+      id="saturation"
+      min="0"
+      max="100"
+      value="0"
+    />
+    <input
+      class="slider"
+      type="range"
+      id="lightness"
+      min="0"
+      max="100"
+      value="0"
+    />
+
+    <script>
+      const hueElement = document.getElementById("hue");
+      const saturationElement = document.getElementById("saturation");
+      const lightnessElement = document.getElementById("lightness");
+      const bodyElement = document.getElementById("body");
+
+      let hue = 0;
+      let saturation = 0;
+      let lightness = 0;
+
+      hueElement.addEventListener("change", (event) => {
+        hue = hueElement.value;
+        bodyElement.style.backgroundColor =
+          "hsl(" + hue + ", " + saturation + "%, " + lightness + "%)";
+      });
+
+      saturationElement.addEventListener("change", (event) => {
+        saturation = saturationElement.value;
+        bodyElement.style.backgroundColor =
+          "hsl(" + hue + ", " + saturation + "%, " + lightness + "%)";
+      });
+
+      lightnessElement.addEventListener("change", (event) => {
+        lightness = lightnessElement.value;
+        bodyElement.style.backgroundColor =
+          "hsl(" + hue + ", " + saturation + "%, " + lightness + "%)";
+      });
+    </script>
+  </body>
+</html>

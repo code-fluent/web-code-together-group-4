@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Color picker</title>
+    <style>
+      .slider {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <input class="slider" type="range" id="red" min="0" max="255" value="0" />
+    <input class="slider" type="range" id="green" min="0" max="255" value="0" />
+    <input class="slider" type="range" id="blue" min="0" max="255" value="0" />
+
+    <script>
+      const redElement = document.getElementById("red");
+      const greenElement = document.getElementById("green");
+      const blueElement = document.getElementById("blue");
+      const bodyElement = document.getElementById("body");
+
+      let red = 0;
+      let green = 0;
+      let blue = 0;
+
+      redElement.addEventListener("change", (event) => {
+        red = redElement.value;
+        bodyElement.style.backgroundColor =
+          "rgb(" + red + ", " + green + ", " + blue + ")";
+      });
+
+      greenElement.addEventListener("change", (event) => {
+        green = greenElement.value;
+        bodyElement.style.backgroundColor =
+          "rgb(" + red + ", " + green + ", " + blue + ")";
+      });
+
+      blueElement.addEventListener("change", (event) => {
+        blue = blueElement.value;
+        bodyElement.style.backgroundColor =
+          "rgb(" + red + ", " + green + ", " + blue + ")";
+      });
+    </script>
+  </body>
+</html>
