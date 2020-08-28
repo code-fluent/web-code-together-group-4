@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+.todo {
+  display: block;
+}
+
+body {
+  background-color: #f6f6f6;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+.todoInput {
+  width: 100%;
+  margin-bottom: 10px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.todoInput:focus {
+  border-bottom-color: #0000ff;
+}
