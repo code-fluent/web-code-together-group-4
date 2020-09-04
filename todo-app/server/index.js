@@ -1,5 +1,6 @@
 const express = require("express");
 const server = express();
+const cors = require("cors");
 const port = 8080;
 
 const knex = require("knex")({
@@ -12,6 +13,7 @@ const knex = require("knex")({
   },
 });
 
+server.use(cors())
 server.use(express.json());
 
 server.get("/todos", async (req, res) => {
