@@ -39,6 +39,26 @@ class App extends Component {
     }
   };
 
+  deleteTodo = async (id, event) => {
+    /* 
+    Preventing the default action with `event.preventDefault()` means
+    that if the browser would do a default action for an event that will be prevented.
+    Exactly as the name suggests.
+
+    What this means for us:
+    The button is inside a label, so when we click the button
+    we click the label too. Clicking the label in our case checks/unchecks the checkbox.
+
+    However we do not want it to happen when we click the button, only when we click the checkbox or the text on the label.
+    The simplest solution to this is to prevent the default event when the button is clicked.
+
+    A more detailed description about this topic you find here: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+    */
+    event.preventDefault();
+    await axios.delete("http://localhost:8080/todos/" + id);
+    await this.loadTodos();
+  };
+
   loadTodos = async () => {
     const response = await axios.get("http://localhost:8080/todos");
     const todos = response.data;
@@ -67,6 +87,13 @@ class App extends Component {
                 }}
               />
               {todo.name}
+
+              <button
+                className="todoDelete"
+                onClick={(event) => this.deleteTodo(todo.id, event)}
+              >
+                delete
+              </button>
             </label>
           );
         })}

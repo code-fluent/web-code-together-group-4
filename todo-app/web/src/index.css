@@ -37,3 +37,10 @@ body {
 .todoInput:focus {
   border-bottom-color: #0000ff;
 }
+
+.todoDelete {
+  background-color: none;
+  border: none;
+  margin-left: 10px;
+  color: #cc0000;
+}
